@@ -1,13 +1,16 @@
-# oracolo
-Signal buy, hold, sell and wait opportunities on stocks and cryptos
+# Oracolo
+
+Produce alerts based on indicators applied to an input signal.
+
+Typical use is to point out when to buy/hold/sell/wait stocks and cryptos.
 
 ## Algorithm:
 
 ### Inputs
 
-Symbol `sy`
+Symbol(s) `sy` (e.g. `NVDA`, `BTCEUR`)
 
-Frequency (days, hours, etc)
+Unit of time `ut` (days, hours, etc)
 
 
 ### Fill backlog of values
@@ -15,9 +18,9 @@ Frequency (days, hours, etc)
 1. Fetch the indicators, sorted by domain width, descending
 
 2. Let `ww` be the width of the widest indicator
-3. Let `lvt` be the timestamp of when the given symbol was last fetched
+3. Let `lvt` be the timestamp of when the given symbol `sy` was last fetched
 4. Fetch and save the values for the given symbol in the time range
-	(`st := max(now - ww, lvt)`, `now`]
+	`(st = max(now - ww, lvt)`, `now]`
 
 ### Housekeeping
 
