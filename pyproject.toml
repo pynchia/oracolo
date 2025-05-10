@@ -1,0 +1,25 @@
+[project]
+name = "oracolo"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "alembic>=1.15.2",
+    "sqlalchemy>=2.0.40",
+]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.2.0",
+    "pytest-asyncio>=0.26.0",
+    "pytest-cov>=6.1.1",
+    "ruff>=0.11.9",
+]
+
+[tool.pytest.ini_options]
+addopts = "-ra -s"
+asyncio_mode = "auto"
+testpaths = [
+    "tests",
+]
